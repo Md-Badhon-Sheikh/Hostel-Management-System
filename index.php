@@ -1,25 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hostel Management System</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
-  <!-- Navbar -->
-  <nav class="bg-blue-600 text-white fixed w-full z-10 ">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="#" class="text-2xl font-bold">Hostel Management</a>
-      <ul class="flex space-x-6">
-        <li><a href="#" class="hover:underline">Home</a></li>
-        <li><a href="#" class="hover:underline">About</a></li>
-        <li><a href="#" class="hover:underline">Features</a></li>
-        <li><a href="#" class="hover:underline">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<?php
+include ('nav.php');
 
+?>
   <!-- Hero Section -->
   <section class="bg-blue-500 text-white py-20 mt-16">
     <div class="container mx-auto text-center">
@@ -50,11 +32,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 Hostel Management System. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
-</html>
+<?php
+include ('footer.php');
+
+?>
