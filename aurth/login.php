@@ -1,7 +1,7 @@
 <?php
 session_start();
 // database connection 
-include_once('db_root.php');
+include_once('../db_root.php');
 
 if(isset($_POST['submit'])){
     $email = $_POST['email'];

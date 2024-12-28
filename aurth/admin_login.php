@@ -1,7 +1,7 @@
 <?php
 session_start();
 // database connection 
-include_once('db_root.php');
+include_once('../db_root.php');
 
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         while(list($id, $userEmail, $userPassword) = $fetch->fetch_row()){
             if($email === $userEmail && $password === $userPassword){
                 $_SESSION['mySession'] = $email;
-                header('admin.php');
+                header('location:../adminPanel/');
             }
         }
     }
@@ -78,7 +78,7 @@ if(isset($_POST['submit'])){
 
                 <div class="mb-4">
                     <label class="block text-gray-700 mb-2" for="email">Email Address</label>
-                    <input name="name" type="text" id="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                    <input name="email" type="text" id="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
                 </div>
 
                 <div class="mb-4">
