@@ -1,3 +1,27 @@
+<?php
+session_start();
+// database connection 
+include_once('db_root.php');
+
+if(isset($_POST['submit'])){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $fetch = $conn->query('SELECT * FROM student_login');
+
+    if($fetch-> num_rows > 0){
+        while(list($id, $userEmail, $userPassword) = $fetch->fetch_row()){
+            if($email === $userEmail && $password === $userPassword){
+                $_SESSION['mySession'] = $email;
+                header('admin.php');
+            }
+        }
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,20 +74,20 @@
             </div>
 
             <!-- Login Form -->
-            <form>
+            <form method="POST" action="">
                 <p class="text-gray-500 text-sm mb-4">Enter into <span class="font-semibold text-red-500">Student Portal</span></p>
 
                 <div class="mb-4">
                     <label class="block text-gray-700 mb-2" for="email">Email Address</label>
-                    <input type="text" id="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                    <input name="email" type="text" id="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
                 </div>
 
                 <div class="mb-4">
                     <label class="block text-gray-700 mb-2" for="password">Password</label>
-                    <input type="password" id="password" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                    <input name="password" type="password" id="password" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
                 </div>
 
-                <button class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Sign in</button>
+                <button name="submit" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Sign in</button>
 
                 <div class="mt-4 text-center text-sm text-gray-500">
                     Forget Password? <a href="#" class="text-blue-500">Reset Password</a>
