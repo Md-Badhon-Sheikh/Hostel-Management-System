@@ -1,6 +1,4 @@
-<?php
-include ('nav.php');
-?>
+
 <div class='hero bg-base-200 min-h-screen gap-x-4'>
   <div class='hero-content flex-col lg:flex-row '>
     <img
@@ -30,6 +28,3 @@ include ('nav.php');
     </div>
   </div>
 </div>
-<?php
-include ('footer.php');
-?>

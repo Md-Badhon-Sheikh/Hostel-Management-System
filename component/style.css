@@ -1,0 +1,37 @@
+/* Make header sticky */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other content */
+    background-color: white; /* Set background to avoid transparency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add shadow for visibility */
+ }
+ 
+ /* Optional: Styling for header content */
+ .sticky-header .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+ }
+ /* toggle theme start  */
+root {
+   --primary-color: #fff;
+   --secondary-color: #121c22;
+   --border-color: #4320dd;
+}
+
+.dark {
+   --primary-color: #111827;
+   --secondary-color: #ffffff;
+   --border-color: #ffffff;
+}
+
+body {
+   background-color: var(--primary-color);
+   color: var(--secondary-color);
+   border-color: var(--border-color);
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* toggle theme end */
