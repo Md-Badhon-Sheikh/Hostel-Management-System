@@ -1,3 +1,13 @@
+<?php
+include_once('../db_root.php');
+session_start();
+
+if (!isset($_SESSION['mySession'])) {
+  header('location:aurth/index.php');
+}
+
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -14,9 +24,9 @@
 
 
   <!-- start navbar -->
- <?php
-    include('shared/header.php');
- ?>
+  <?php
+  include('shared/header.php');
+  ?>
   <!-- end navbar -->
 
 
@@ -25,17 +35,15 @@
 
     <!-- start sidebar -->
     <?php
-        include ('shared/sidebar.php')
+    include('shared/sidebar.php')
     ?>
     <!-- end sidbar -->
 
     <!-- strat content -->
     <div class="bg-gray-100 flex-1 p-6 md:mt-16">
 
-
       <!-- General Report -->
       <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
-
 
         <!-- card -->
         <div class="report-card">
@@ -55,7 +63,7 @@
               <!-- bottom -->
               <div class="mt-8">
                 <h1 class="h5 num-4"></h1>
-                <p>items sales</p>
+                <p>Total Student</p>
               </div>
               <!-- end bottom -->
 
@@ -93,7 +101,6 @@
           <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
         </div>
         <!-- end card -->
-
 
         <!-- card -->
         <div class="report-card">

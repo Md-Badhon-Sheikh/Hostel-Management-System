@@ -193,11 +193,6 @@ if (el_3.length > 0) {
 // end 3 digit
 
 
-
-
-
-
-
 // return 4 digit
 var el_4 = document.getElementsByClassName('num-4');
 var display_4 = function(){
