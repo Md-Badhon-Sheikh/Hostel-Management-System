@@ -23,14 +23,14 @@ if(isset($_POST['submit'])){
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <!-- Tailwind CSS plugin CDN link (DaisyUI) -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Font Awesome link -->
     <script src="https://kit.fontawesome.com/9ce82b2c02.js" crossorigin="anonymous"></script>
@@ -79,15 +79,26 @@ if(isset($_POST['submit'])){
 
                 <div class="mb-4">
                     <label class="block text-gray-700 mb-2" for="email">Email Address</label>
-                    <input name="email" type="text" id="email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                    <input 
+                        name="email" 
+                        type="text" 
+                        id="email" 
+                        class="w-full px-4 py-2 border rounded-md bg-white text-gray-900"
+                        placeholder="Enter your email">
                 </div>
 
                 <div class="mb-4">
                     <label class="block text-gray-700 mb-2" for="password">Password</label>
-                    <input name="password" type="password" id="password" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400 focus:outline-none">
+                    <input 
+                        name="password" 
+                        type="password" 
+                        id="password" 
+                        class="w-full px-4 py-2 border rounded-md bg-white text-gray-900"
+                        placeholder="Enter your password">
                 </div>
 
-                <button name="submit" class="w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Sign in</button>
+
+                <button name="submit" class="w-full py-2 bg-teal-500 text-white rounded-md hover:bg-blue-600">Sign in</button>
 
                 <div class="mt-4 text-center text-sm text-gray-500">
                     Forget Password? <a href="#" class="text-blue-500">Reset Password</a>
