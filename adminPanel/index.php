@@ -3,7 +3,7 @@ include_once('../db_root.php');
 session_start();
 
 if (!isset($_SESSION['mySession'])) {
-  header('location:aurth/index.php');
+  header('location:../index.php');
 }
 
 
