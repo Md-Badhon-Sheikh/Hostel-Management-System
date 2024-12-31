@@ -54,7 +54,7 @@
             <div class="navbar-end">
                 <!-- search option  -->
                 <div class="navbar-end">
-                    <a href="aurth/login.php" class="btn">Sign In</a>
+                    <a href="aurth/student_login.php" class="btn">Sign In</a>
                 </div>
                 <!-- ===== toggle icon ====== -->
                 

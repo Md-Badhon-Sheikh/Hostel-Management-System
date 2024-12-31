@@ -68,7 +68,7 @@ if(isset($_POST['submit'])){
 
             <!-- Login Tabs -->
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="login.php"><button class="font-semibold text-lg text-gray-500">Student Login</button></a>
+                <a href="student_login.php"><button class="font-semibold text-lg text-gray-500">Student Login</button></a>
                 <a href="admin_login.php"><button class="font-semibold text-lg border-b-2 border-blue-500 text-blue-500">Admin Login</button></a>
             </div>
 

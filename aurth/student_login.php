@@ -13,7 +13,10 @@ if(isset($_POST['submit'])){
         while(list($id, $userEmail, $userPassword) = $fetch->fetch_row()){
             if($email === $userEmail && $password === $userPassword){
                 $_SESSION['mySession'] = $email;
-                header('adminPanel.php');
+                header('location:../studentDashboard/');
+            }
+            else{
+                $msg = 'Email or password incorrect!';
             }
         }
     }
@@ -76,6 +79,9 @@ if(isset($_POST['submit'])){
             <!-- Login Form -->
             <form method="POST" action="">
                 <p class="text-gray-500 text-sm mb-4">Enter into <span class="font-semibold text-red-500">Student Portal</span></p>
+                <?php
+                    echo isset($msg)?$msg:'';
+                ?>
 
                 <div class="mb-4">
                     <label class="block text-gray-700 mb-2" for="email">Email Address</label>
