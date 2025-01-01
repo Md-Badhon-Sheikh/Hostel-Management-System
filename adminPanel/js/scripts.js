@@ -194,19 +194,19 @@ if (el_3.length > 0) {
 
 
 // return 4 digit
-var el_4 = document.getElementsByClassName('num-4');
-var display_4 = function(){
-    for (let i = 0; i < el_4.length; i++) {
-        const e = el_4[i];
+// var el_4 = document.getElementsByClassName('num-4');
+// var display_4 = function(){
+//     for (let i = 0; i < el_4.length; i++) {
+//         const e = el_4[i];
         
-        e.innerText = num(999 , 9999);
+//         e.innerText = num(999 , 9999);
         
-    }   
-};
+//     }   
+// };
 
-if (el_4.length > 0) {
-    display_4();   
-}
+// if (el_4.length > 0) {
+//     display_4();   
+// }
 // end 4 digits
 
 
