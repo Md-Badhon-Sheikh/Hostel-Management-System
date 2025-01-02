@@ -28,65 +28,54 @@ if (!isset($_SESSION['mySession'])) {
   <!-- end navbar -->
 
   <!-- strat wrapper -->
-  <div class="h-screen flex flex-row flex-wrap">
-
- 
+  <div class="h-screen grid grid-cols-3 gap-2">
 
     <!-- start sidebar -->
-    <?php
+
+   <?php
     include('shared/sidebar.php')
     ?>
+
     <!-- end side bar -->
 
-       <!-- add room from  -->
+    <!-- add room from  -->
 
-       <div class="max-w-2xl mx-auto p-8 bg-gray-100 rounded-md shadow-md">
+    <div class="col-span-2 max-w-2xl mx-auto p-8 bg-gray-100 rounded-md shadow-md ml-52">
       <h2 class="text-2xl font-semibold text-gray-700 mb-6">Edit Hostel Room Details</h2>
 
-      <form>
-        <!-- Sector Input -->
-        <div class="mb-4">
-          <label for="sector" class="block text-sm font-medium text-gray-600 mb-2">Seater</label>
-          <input
-            type="text"
-            id="sector"
-            name="sector"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="5" />
-        </div>
 
-        <!-- Room No Input -->
-        <div class="mb-4">
-          <label for="room-no" class="block text-sm font-medium text-gray-600 mb-2">Room no</label>
-          <input
-            type="text"
-            id="room-no"
-            name="room-no"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-200 text-gray-500"
-            placeholder="Room no can't be changed"
-            disabled />
-        </div>
+     <div class="bg-gray-100 justify-center items-center min-h-screen">
+     <div class="bg-white p-6 rounded-lg shadow-lg w-9/12">
+        <h1 class="text-2xl font-bold mb-4 text-center">Room Details Form</h1>
+        <form action="#" method="POST">
+          <!-- Room Number -->
+          <div class="mb-4">
+            <label for="roomNo" class="block text-sm font-medium text-gray-700">Room Number</label>
+            <input type="text" id="roomNo" name="roomNo" placeholder="Enter room number" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+          </div>
 
-        <!-- Fee Input -->
-        <div class="mb-6">
-          <label for="fee" class="block text-sm font-medium text-gray-600 mb-2">Fee (PM)</label>
-          <input
-            type="text"
-            id="fee"
-            name="fee"
-            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            placeholder="5000" />
-        </div>
+          <!-- Sets -->
+          <div class="mb-4">
+            <label for="sets" class="block text-sm font-medium text-gray-700">Number of Sets</label>
+            <input type="number" id="sets" name="sets" placeholder="Enter number of sets" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+          </div>
 
-        <!-- Submit Button -->
-        <div class="text-center">
-          <button
-            type="submit"
-            class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-            Update Room Details
-          </button>
-        </div>
-      </form>
+          <!-- Fee Per Month -->
+          <div class="mb-4">
+            <label for="fee" class="block text-sm font-medium text-gray-700">Fee Per Month</label>
+            <input type="number" id="fee" name="fee" placeholder="Enter fee per month" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+     </div>
+
     </div>
 
   </div>
