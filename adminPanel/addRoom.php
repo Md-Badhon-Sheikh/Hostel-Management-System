@@ -4,6 +4,17 @@ session_start();
 
 if (!isset($_SESSION['mySession'])) {
   header('location:../index.php');
+
+}
+
+if(isset($_POST['submit'])){
+  $roomNo = $_POST['roomNo'];
+  $sets = $_POST['sets'];
+  $fee = $_POST['fee'];
+
+  $conn -> query("CALL rooms('$roomNo','$sets', '$fee' )");
+
+
 }
 
 
@@ -68,7 +79,7 @@ if (!isset($_SESSION['mySession'])) {
 
             <!-- Submit Button -->
             <div>
-              <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              <button name="submit" type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                 Submit
               </button>
             </div>

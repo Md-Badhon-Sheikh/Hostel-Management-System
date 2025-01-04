@@ -89,10 +89,21 @@ if (!isset($_SESSION['mySession'])) {
               </div>
               <!-- end top -->
 
+               <!-- display total rooms  -->
+              <?php
+              $display = $conn->query("SELECT * FROM add_room");
+              $counter = 1;
+              while (list($id, $room_no) = $display->fetch_row()) {
+                $rooms = $counter++;
+              }
+
+              ?>
               <!-- bottom -->
               <div class="mt-8">
-                <h1 class="h5 num-4"></h1>
-                <p>new orders</p>
+                <h1 class="h5 num-4"> <?php 
+                  echo "$rooms";
+                ?></h1>
+                <a href="displayRoom.php"><p>Total Rooms</p></a>
               </div>
               <!-- end bottom -->
 
