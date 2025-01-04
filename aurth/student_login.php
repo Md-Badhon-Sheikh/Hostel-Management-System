@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
         while(list($id, $userEmail, $userPassword) = $fetch->fetch_row()){
             if($email === $userEmail && $password === $userPassword){
                 $_SESSION['mySession'] = $email;
-                header('location:../studentDashboard/');
+                header('location:../studentAdminPanel/');
             }
             else{
                 $msg = 'Email or password incorrect!';

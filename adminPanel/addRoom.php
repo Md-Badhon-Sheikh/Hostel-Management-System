@@ -28,53 +28,53 @@ if (!isset($_SESSION['mySession'])) {
   <!-- end navbar -->
 
   <!-- strat wrapper -->
-  <div class="h-screen grid grid-cols-3 gap-2">
+  <div class=" flex w-full">
 
     <!-- start sidebar -->
+      <?php
+      include('shared/sidebar.php')
+      ?>
 
-   <?php
-    include('shared/sidebar.php')
-    ?>
-
+  
     <!-- end side bar -->
 
     <!-- add room from  -->
 
-    <div class="col-span-2 max-w-2xl mx-auto p-8 bg-gray-100 rounded-md shadow-md ml-52">
+    <div class=" p-8 bg-gray-100 rounded-md shadow-md ml-52 w-full ">
       <h2 class="text-2xl font-semibold text-gray-700 mb-6">Edit Hostel Room Details</h2>
 
 
-     <div class="bg-gray-100 justify-center items-center min-h-screen">
-     <div class="bg-white p-6 rounded-lg shadow-lg w-9/12">
-        <h1 class="text-2xl font-bold mb-4 text-center">Room Details Form</h1>
-        <form action="#" method="POST">
-          <!-- Room Number -->
-          <div class="mb-4">
-            <label for="roomNo" class="block text-sm font-medium text-gray-700">Room Number</label>
-            <input type="text" id="roomNo" name="roomNo" placeholder="Enter room number" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-          </div>
+      <div class="bg-gray-100 justify-center items-center min-h-screen">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-9/12">
+          <h1 class="text-2xl font-bold mb-4 text-center">Room Details Form</h1>
+          <form action="#" method="POST">
+            <!-- Room Number -->
+            <div class="mb-4">
+              <label for="roomNo" class="block text-sm font-medium text-gray-700">Room Number</label>
+              <input type="text" id="roomNo" name="roomNo" placeholder="Enter room number" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
 
-          <!-- Sets -->
-          <div class="mb-4">
-            <label for="sets" class="block text-sm font-medium text-gray-700">Number of Sets</label>
-            <input type="number" id="sets" name="sets" placeholder="Enter number of sets" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-          </div>
+            <!-- Sets -->
+            <div class="mb-4">
+              <label for="sets" class="block text-sm font-medium text-gray-700">Number of Sets</label>
+              <input type="number" id="sets" name="sets" placeholder="Enter number of sets" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
 
-          <!-- Fee Per Month -->
-          <div class="mb-4">
-            <label for="fee" class="block text-sm font-medium text-gray-700">Fee Per Month</label>
-            <input type="number" id="fee" name="fee" placeholder="Enter fee per month" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-          </div>
+            <!-- Fee Per Month -->
+            <div class="mb-4">
+              <label for="fee" class="block text-sm font-medium text-gray-700">Fee Per Month</label>
+              <input type="number" id="fee" name="fee" placeholder="Enter fee per month" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
 
-          <!-- Submit Button -->
-          <div>
-            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-              Submit
-            </button>
-          </div>
-        </form>
+            <!-- Submit Button -->
+            <div>
+              <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-     </div>
 
     </div>
 
