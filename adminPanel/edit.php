@@ -6,16 +6,34 @@ if (!isset($_SESSION['mySession'])) {
   header('location:../index.php');
 
 }
-
-if(isset($_POST['submit'])){
-  $roomNo = $_POST['roomNo'];
-  $sets = $_POST['sets'];
-  $fee = $_POST['fee'];
-
-  $conn -> query("CALL rooms('$roomNo','$sets', '$fee' )");
- 
-    header('location:displayRoom.php');
+if (isset($_GET['editId'])) {
+    $editId = $_GET['editId'];
   
+    $sql = "SELECT * FROM add_room WHERE id = $editId";
+    $query = mysqli_query($conn, $sql);
+    $data = mysqli_fetch_assoc($query);
+    
+    $id = $data['id'];
+    $roomNo = $data['room_no'];
+    $sets = $data['sets'];
+    $fee = $data['fee'];
+}
+
+if(isset($_POST['update'])){
+    $id = $_POST['id'];
+    $roomNo = $_POST['roomNo'];
+    $sets = $_POST['sets'];
+    $fee = $_POST['fee'];
+
+  $sql = " UPDATE add_room SET  room_no = '$roomNo', sets = '$sets', fee = '$fee' WHERE id = $id ";
+  if(mysqli_query($conn , $sql)== TRUE){
+    header('location: displayRoom.php');
+    echo "data updated!";
+  }
+  else{
+    echo "data not updated!";
+  }
+
 
 }
 
@@ -61,28 +79,29 @@ if(isset($_POST['submit'])){
         <div class="bg-white p-6 rounded-lg shadow-lg w-9/12">
           <h1 class="text-2xl font-bold mb-4 text-center">Room Details Form</h1>
           <form action="#" method="POST">
+          <input type="text" name="id" value="<?php echo $id ?>" hidden>
             <!-- Room Number -->
             <div class="mb-4">
               <label for="roomNo" class="block text-sm font-medium text-gray-700">Room Number</label>
-              <input type="text" id="roomNo" name="roomNo" placeholder="Enter room number" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+              <input type="text" id="roomNo" name="roomNo" value="<?php echo $roomNo ?>" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- Sets -->
             <div class="mb-4">
               <label for="sets" class="block text-sm font-medium text-gray-700">Number of Sets</label>
-              <input type="number" id="sets" name="sets" placeholder="Enter number of sets" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+              <input type="number" id="sets" name="sets" value="<?php echo $sets ?>" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- Fee Per Month -->
             <div class="mb-4">
               <label for="fee" class="block text-sm font-medium text-gray-700">Fee Per Month</label>
-              <input type="number" id="fee" name="fee" placeholder="Enter fee per month" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+              <input type="number" id="fee" name="fee" value="<?php echo $fee ?>" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
 
             <!-- Submit Button -->
             <div>
-              <button name="submit" type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                Submit
+              <button name="update" type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Update
               </button>
             </div>
           </form>

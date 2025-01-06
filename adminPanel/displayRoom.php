@@ -6,14 +6,14 @@ if (!isset($_SESSION['mySession'])) {
   header('location:../index.php');
 }
 
-if (isset($_POST['submit'])) {
-  $roomNo = $_POST['roomNo'];
-  $sets = $_POST['sets'];
-  $fee = $_POST['fee'];
+if(isset($_GET['deleteId'])){
+  $delete = $_GET['deleteId'];
 
-  $conn->query("CALL rooms('$roomNo','$sets', '$fee' )");
+  $sql = "DELETE FROM add_room WHERE id = $delete";
+  if(mysqli_query($conn , $sql)== TRUE){
+    header('location:displayRoom.php');
+  }
 }
-
 
 ?>
 <!doctype html>
@@ -77,8 +77,8 @@ if (isset($_POST['submit'])) {
             <td class='px-6 py-4'>$sets</td>
             <td class='px-6 py-4'>$fee</td>
             <td class='px-6 py-4'>
-              <button class='text-blue-600 hover:underline'>Edit</button>
-              <button class='text-red-600 hover:underline ml-4'>Delete</button>
+              <button class='text-blue-600 hover:underline'> <a href='edit.php?editId=$id'>Edit</a> </button>
+              <button class='text-red-600 hover:underline ml-4'><a href='displayRoom.php?deleteId=$id'>Delete</a></button>
             </td>
           </tr>";
             }
@@ -87,7 +87,7 @@ if (isset($_POST['submit'])) {
          
         </tbody>
       </table>
-
+          
 
     </div>
 
