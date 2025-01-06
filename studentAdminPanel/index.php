@@ -45,16 +45,16 @@ if (!isset($_SESSION['mySession'])) {
       <!-- General Report -->
       <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
 
-       <!-- card -->
-       <div class="report-card">
+        <!-- card -->
+        <div class="report-card">
           <div class="card">
             <div class="card-body flex flex-col">
 
               <!-- top -->
               <div class="flex flex-row justify-between items-center">
-                <div class="h6 text-green-700 fad fa-users"></div>
+                <div class="h6 text-indigo-700 fad fa-shopping-cart"></div>
                 <span class="rounded-full text-white badge bg-teal-400 text-xs">
-                  150%
+                  12%
                   <i class="fal fa-chevron-up ml-1"></i>
                 </span>
               </div>
@@ -62,8 +62,8 @@ if (!isset($_SESSION['mySession'])) {
 
               <!-- bottom -->
               <div class="mt-8">
-                <h1 class="h5 num-4">MY Profile</h1>
-                <p>Show All Information</p>
+                <h1 class="h5 num-4"></h1>
+                <p>Total Student</p>
               </div>
               <!-- end bottom -->
 
@@ -72,6 +72,7 @@ if (!isset($_SESSION['mySession'])) {
           <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
         </div>
         <!-- end card -->
+
 
         <!-- card -->
         <div class="report-card">
@@ -87,11 +88,10 @@ if (!isset($_SESSION['mySession'])) {
                 </span>
               </div>
               <!-- end top -->
-
               <!-- bottom -->
               <div class="mt-8">
-                <h1 class="h5 num-4">My Room</h1>
-                <p>Show Details</p>
+                <h1 class="h5 num-4"></h1>
+                <a href="displayRoom.php"><p>Total Rooms</p></a>
               </div>
               <!-- end bottom -->
 
@@ -100,56 +100,9 @@ if (!isset($_SESSION['mySession'])) {
           <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
         </div>
         <!-- end card -->
-
-       
+        <!-- end card -->
       </div>
       <!-- End General Report -->
-
-      <!-- strat Analytics -->
-      <div class="mt-6 grid grid-cols-2 gap-6 xl:grid-cols-1">
-
-        <!-- carts -->
-        <div class="flex flex-col">
-          <!-- end alert -->
-
-          <!-- charts -->
-          <div class="grid grid-cols-2 gap-6 h-full">
-
-            <div class="card">
-              <div class="py-3 px-4 flex flex-row justify-between">
-                <h1 class="h6">
-                  <span class="num-4"></span>k
-                  <p>page view</p>
-                </h1>
-
-                <div
-                  class="bg-teal-200 text-teal-700 border-teal-300 border w-10 h-10 rounded-full flex justify-center items-center">
-                  <i class="fad fa-eye"></i>
-                </div>
-              </div>
-              <div class="analytics_1"></div>
-            </div>
-
-            <div class="card">
-              <div class="py-3 px-4 flex flex-row justify-between">
-                <h1 class="h6">
-                  <span class="num-2"></span>k
-                  <p>Unique Users</p>
-                </h1>
-
-                <div
-                  class="bg-indigo-200 text-indigo-700 border-indigo-300 border w-10 h-10 rounded-full flex justify-center items-center">
-                  <i class="fad fa-users-crown"></i>
-                </div>
-              </div>
-              <div class="analytics_1"></div>
-            </div>
-
-          </div>
-          <!-- charts    -->
-
-        </div>
-      </div>
       <!-- end content -->
 
     </div>
