@@ -44,42 +44,49 @@
       <!-- link -->
       <a href="bookHostel.php"
         class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-file"></i>
         Book Hostel
       </a>
       <!-- end link -->
 
       <!-- link -->
       <a href="roomDetails.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-comments text-xs mr-2"></i>
+      <i class="fa-regular fa-file"></i>
         Room Details
       </a>
       <!-- end link -->
 
       <!-- link -->
       <a href="complainRegistration.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shield-check text-xs mr-2"></i>
+      <i class="fa-solid fa-file"></i>
         Complaint Registration
       </a>
       <!-- end link -->
 
       <!-- link -->
       <a href="registeredComplain.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shield-check text-xs mr-2"></i>
+      <i class="fa-solid fa-file-circle-check"></i>
        Registered Complaints
       </a>
       <!-- end link -->
 
       <!-- link -->
       <a href="feedback.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shield-check text-xs mr-2"></i>
+      <i class="fa-regular fa-comment-dots"></i>
         Feedback
       </a>
       <!-- end link -->
 
       <!-- link -->
+      <a href="myProfile.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      <i class="fa-solid fa-user"></i>
+        My Profile
+      </a>
+      <!-- end link -->
+
+      <!-- link -->
       <a href="changePassword.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shield-check text-xs mr-2"></i>
+      <i class="fa-solid fa-key"></i>
         Change Password
       </a>
       <!-- end link -->
