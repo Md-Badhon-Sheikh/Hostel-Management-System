@@ -17,7 +17,7 @@ if (!isset($_SESSION['mySession'])) {
   <link rel="shortcut icon" href="./img/fav.png" type="image/x-icon">
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <title>Welcome To Cleopatra</title>
+  <title>Welcome To Hostel Manage System</title>
 </head>
 
 <body class="bg-gray-100">
@@ -62,7 +62,7 @@ if (!isset($_SESSION['mySession'])) {
 
               <!-- bottom -->
               <div class="mt-8">
-                <h1 class="h5 num-4"></h1>
+                <h1 class="h5 num-4">35</h1>
                 <p>Total Student</p>
               </div>
               <!-- end bottom -->
@@ -130,7 +130,7 @@ if (!isset($_SESSION['mySession'])) {
 
               <!-- bottom -->
               <div class="mt-8">
-                <h1 class="h5 num-4"></h1>
+                <h1 class="h5 num-4">25</h1>
                 <p>total Products</p>
               </div>
               <!-- end bottom -->
@@ -159,7 +159,7 @@ if (!isset($_SESSION['mySession'])) {
 
               <!-- bottom -->
               <div class="mt-8">
-                <h1 class="h5 num-4"></h1>
+                <h1 class="h5 num-4">38</h1>
                 <p>new Visitor</p>
               </div>
               <!-- end bottom -->
@@ -185,7 +185,7 @@ if (!isset($_SESSION['mySession'])) {
             <div class="card">
               <div class="py-3 px-4 flex flex-row justify-between">
                 <h1 class="h6">
-                  <span class="num-4"></span>k
+                  <span class="num-4"></span>45 k
                   <p>page view</p>
                 </h1>
 
