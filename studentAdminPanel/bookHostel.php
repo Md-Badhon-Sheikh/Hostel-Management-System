@@ -42,43 +42,45 @@ if (!isset($_SESSION['mySession'])) {
     <!-- add room from  -->
 
     <div class=" p-8 bg-gray-100 rounded-md shadow-md ml-52 w-full ">
-      <h2 class="text-2xl font-semibold text-gray-700 mb-6">Edit Hostel Room Details</h2>
       <div class="bg-gray-100 w-full justify-center items-center min-h-screen">
-  <div class="bg-white p-6 rounded-lg shadow-xl px-7">
-    <h1 class="text-2xl font-bold mb-4 text-center">Room Details Form</h1>
-    <form action="#" method="POST" class="w-full">
+        <div class="bg-white p-6 rounded-lg shadow-xl px-7">
+          <h1 class="text-2xl font-bold mb-4 text-center">Room Related info</h1>
+          <form action="#" method="POST" class="w-full ">
             <!-- Room Number -->
             <div class="flex mb-4 w-full">
-              <label for="roomNumber" class="w-1/4 text-gray-700">Room No</label>
-              <input class="w-3/4 pl-5 py-2 border border-gray-300 rounded" type="text" name="roomNumber" id="roomNumber" placeholder="Enter Room Number">
+              <label for="roomNumber" class="w-1/4 text-gray-700 text-right font-semibold">Room No :</label>
+              <input class="w-3/4 py-2 px-4 border border-gray-300 rounded ml-3" type="text" name="roomNumber" id="roomNumber" placeholder="Enter Room Number" />
             </div>
-            
+
+
             <!-- Seater -->
             <div class="flex mb-4 w-full">
-              <label for="seater" class="w-1/4 text-gray-700">Seater</label>
-              <input class="w-3/4 pl-5 py-2 border border-gray-300 rounded" type="text" name="seater" id="seater" placeholder="Enter Seater">
+              <label for="seater" class="w-1/4 text-gray-700  text-right font-semibold">Seater :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="seater" id="seater" placeholder="Enter Seater">
             </div>
 
             <!-- Fees Per Month -->
             <div class="flex mb-4 w-full">
-              <label for="fees" class="w-1/4 text-gray-700">Fees Per Month</label>
-              <input class="w-3/4 pl-5 py-2 border border-gray-300 rounded" type="text" name="fees" id="fees" placeholder="Enter Fee">
+              <label for="fees" class="w-1/4 text-gray-700  text-right font-semibold">Fees Per Month :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="fees" id="fees" placeholder="Enter Fee">
             </div>
 
             <!-- Stay From -->
             <div class="flex mb-4 w-full">
-              <label for="stayFrom" class="w-1/4 text-gray-700">Stay From</label>
-              <input class="w-3/4 pl-5 py-2 border border-gray-300 rounded" type="text" name="stayFrom" id="stayFrom" placeholder="Enter Stay From">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Stay From :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="stayFrom" id="stayFrom" placeholder="Enter Stay From">
             </div>
 
             <!-- Duration -->
             <div class="flex mb-4 w-full">
-              <label for="duration" class="w-1/4 text-gray-700">Duration</label>
-              <input class="w-3/4 pl-5 py-2 border border-gray-300 rounded" type="text" name="duration" id="duration" placeholder="Enter Duration">
+              <label for="duration" class="w-1/4 text-gray-700 text-right font-semibold">Duration :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="duration" id="duration" placeholder="Enter Duration">
             </div>
 
             <!-- Submit Button -->
             <div class="flex justify-center">
+              <label for="duration" class="w-1/4 text-gray-700 font-semibold"></label>
+
               <button name="submit" type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                 Submit
               </button>
@@ -92,7 +94,7 @@ if (!isset($_SESSION['mySession'])) {
   </div>
 
 
-  
+
   <!-- script -->
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <script src="js/scripts.js"></script>
