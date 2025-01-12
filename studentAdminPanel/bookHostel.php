@@ -44,12 +44,14 @@ if (!isset($_SESSION['mySession'])) {
     <div class=" p-8 bg-gray-100 rounded-md shadow-md ml-52 w-full ">
       <div class="bg-gray-100 w-full justify-center items-center min-h-screen">
         <div class="bg-white p-6 rounded-lg shadow-xl px-7">
-          <h1 class="text-2xl font-bold mb-4 text-center">Room Related info</h1>
+          <h1 class="text-2xl font-bold mb-4 ">Room Related info</h1>
           <form action="#" method="POST" class="w-full ">
             <!-- Room Number -->
             <div class="flex mb-4 w-full">
               <label for="roomNumber" class="w-1/4 text-gray-700 text-right font-semibold">Room No :</label>
-              <input class="w-3/4 py-2 px-4 border border-gray-300 rounded ml-3" type="text" name="roomNumber" id="roomNumber" placeholder="Enter Room Number" />
+              <select name="room" id="" class="w-3/4 py-2 px-4 border border-gray-300 rounded ml-3">
+                <option value="" aria-placeholder="Select Room Number">Select Room Number</option>
+              </select>
             </div>
 
 
@@ -65,25 +67,131 @@ if (!isset($_SESSION['mySession'])) {
               <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="fees" id="fees" placeholder="Enter Fee">
             </div>
 
+            <!-- Food Status -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Food Status :</label>
+              <input type="radio" name="food" id="" class="p-3  ml-3 mr-3">
+              <label for="food" class="text-gray-600 mr-3">Without Food</label>
+              <input type="radio" name="food" id="" class="p-3  ml-3 mr-3">
+              <label for="food" class="text-gray-600 mr-3">With Food (TK 2000.00 Per Month Extra)</label>
+            </div>
+
             <!-- Stay From -->
             <div class="flex mb-4 w-full">
               <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Stay From :</label>
-              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="stayFrom" id="stayFrom" placeholder="Enter Stay From">
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="date" name="stayFrom" id="stayFrom" placeholder="Enter Stay From">
             </div>
 
             <!-- Duration -->
             <div class="flex mb-4 w-full">
               <label for="duration" class="w-1/4 text-gray-700 text-right font-semibold">Duration :</label>
-              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="duration" id="duration" placeholder="Enter Duration">
+              <select name="room" id="" class="w-3/4 py-2 px-4 border border-gray-300 rounded ml-3">
+                <option value="">Select Duration in Month</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+                <option value="">11</option>
+                <option value="">12</option>
+              </select>
+            </div>
+
+            <!-- personal info  -->
+            <h1 class="text-2xl font-bold my-6 text-blue-900">Room Related info</h1>
+
+            <!-- Course -->
+            <div class="flex mb-4 w-full">
+              <label for="roomNumber" class="w-1/4 text-gray-700 text-right font-semibold">Course :</label>
+              <select name="room" id="" class="w-3/4 py-2 px-4 border border-gray-300 rounded ml-3">
+                <option value="" aria-placeholder="Select Room Number">Select Course</option>
+                <option value="" aria-placeholder="Select Room Number">Bachelor of Technology (B.Tech)</option>
+                <option value="" aria-placeholder="Select Room Number">Bachelor Of commerce (B.Com)</option>
+                <option value="" aria-placeholder="Select Room Number">Bachelor of Science (BSC)</option>
+                <option value="" aria-placeholder="Select Room Number">Bachelor Of Computer Application (BCA)</option>
+                <option value="" aria-placeholder="Select Room Number">Master of Computer Application (MCA)</option>
+                <option value="" aria-placeholder="Select Room Number">Bachelor of Engineering (BE)</option>
+              </select>
+            </div>
+
+            <!-- Registration No -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Registration No :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="registration" id="stayFrom" placeholder="Enter Registration No">
+            </div>
+
+            <!-- Name -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Full Name :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="name" id="stayFrom" placeholder="Enter Your Full Name">
+            </div>
+
+            <!-- Gender -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Gender :</label>
+              <input type="radio" name="gender" id="" class="p-3  ml-3 mr-3">
+              <label for="food" class="text-gray-600 mr-3">Male</label>
+              <input type="radio" name="gender" id="" class="p-3  ml-3 mr-3">
+              <label for="food" class="text-gray-600 mr-3">Female</label>
+            </div>
+
+            <!-- Contact -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Contact No :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="number" id="stayFrom" placeholder="Enter Your Contact No">
+            </div>
+
+            <!-- Email -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold"> Email :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="email" name="email" id="stayFrom" placeholder="Enter Your Email">
+            </div>
+
+            <!-- Address  -->
+            <h1 class="text-2xl font-bold my-6 text-blue-900">Permanent Address</h1>
+
+            <!-- Address -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold"> Address :</label>
+              <textarea name="address" id="" class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3 h-40 " placeholder="Enter Your Address"></textarea>
+            </div>
+
+            <!-- District -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold"> District :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="district" id="stayFrom" placeholder="Enter Your District">
+            </div>
+
+            <!-- Upazila -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold"> Upazila/P.S :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="upazila" id="stayFrom" placeholder="Enter Your Upazila">
+            </div>
+
+            <!-- Post Office -->
+            <div class="flex mb-4 w-full">
+              <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold"> Post Office :</label>
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="upazila" id="stayFrom" placeholder="Enter Your Post Office">
             </div>
 
             <!-- Submit Button -->
             <div class="flex justify-center">
               <label for="duration" class="w-1/4 text-gray-700 font-semibold"></label>
 
-              <button name="submit" type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              <button name="submit" type="submit" class=" btn btn-success bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 ">
                 Submit
               </button>
+
+              <!-- btn cancel  -->
+
+              <!-- <button name="submit" type="submit" class=" btn btn-active btn-ghost bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 ">
+                Submit
+              </button> -->
             </div>
           </form>
         </div>
