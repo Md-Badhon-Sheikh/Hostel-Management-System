@@ -24,7 +24,7 @@
       </div>
       <!-- Item 2 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="images/carousal01.jpg" alt="Hostel room images">
+        <img src="images/carousal02.jpg" alt="Hostel room images">
       </div>
       <!-- Item 3 -->
       <div class="hidden duration-700 ease-in-out" data-carousel-item>

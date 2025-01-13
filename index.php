@@ -26,9 +26,30 @@
   include('component/header.php');
   ?>
   <!-- carousal end -->
-  <!-- border  -->
-  <div class="">
 
+  <!-- Rooms section  -->
+
+
+  <!-- hero -->
+  <div class="my-12">
+    <div class="text-center p-5 ">
+      <h1 class="text-5xl font-bold uppercase py-5 text-orange-500">Book your Stay?</h1>
+      <!-- <p class="text-l font-semibold uppercase text-orange-300">more accomodations</p> -->
+    </div>
+    <div class="hero bg-base-200">
+      <div class="hero-content flex-col lg:flex-row">
+        <img
+          src="images/room.jpg"
+          class="max-w-lg rounded-lg shadow-2xl" />
+        <div class="p-12">
+          <h1 class="text-5xl font-bold uppercase">Hello!</h1>
+          <p class="py-6 text-justify">
+          Our hostel is located in the city’s finest and trendiest district. Everyone who is interested in being a part of the creative and cutting-edge world that is New York, you are welcome to CityHostel for the best experience.
+          </p>
+          <button class="btn btn-primary uppercase">More About Us</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
