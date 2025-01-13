@@ -7,7 +7,6 @@ if (!isset($_SESSION['mySession'])) {
 }
 
 
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,6 +18,7 @@ if (!isset($_SESSION['mySession'])) {
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Welcome To Hostel Management System</title>
+
 </head>
 
 <body class="bg-gray-100">
@@ -41,50 +41,79 @@ if (!isset($_SESSION['mySession'])) {
 
     <!-- add room from  -->
 
-    <div class=" p-8 bg-gray-100 rounded-md shadow-md ml-52 w-full ">
-      <h2 class="text-2xl font-semibold text-gray-700 mb-6">Edit Hostel Room Details</h2>
+    <div class=" flex items-center justify-center px-4">
+      <div class="bg-white shadow-lg rounded-lg max-w-md w-full p-8">
+        <!-- Header -->
+        <div class="text-center mb-6">
+          <h2 class="text-2xl font-bold text-gray-800">Change Password</h2>
+          <p class="text-gray-600 text-sm">Update your account's password</p>
+        </div>
 
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
-            <th scope="col" class="px-6 py-3">SL</th>
-            <th scope="col" class="px-6 py-3">Room No</th>
-            <th scope="col" class="px-6 py-3">Set's</th>
-            <th scope="col" class="px-6 py-3">Fee Per Month</th>
-            <th scope="col" class="px-6 py-3">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          if (!$conn) {
-            die('Connection Failed' . mysqli_connect_errno());
-          } else {
+        <!-- Change Password Form -->
+        <form method="POST" action="">
+          <!-- Current Password -->
+          <div class="mb-4">
+            <label for="current_password" class="block text-gray-700 mb-2">
+              Current Password
+            </label>
+            <input
+              type="password"
+              id="current_password"
+              name="current_password"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Enter your current password"
+              required />
+          </div>
 
-            $display = $conn->query("SELECT * FROM add_room");
-            $count = 1;
-            while (list($id, $room_no, $sets, $fee) = $display->fetch_row()) {
-              $sl = $count++;
-              echo " <tr class='bg-white border-b dark:bg-gray-800 dark:border-gray-700'>
-            <td class='px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap'>$sl</td>
-            <td class='px-6 py-4'>$room_no</td>
-            <td class='px-6 py-4'>$sets</td>
-            <td class='px-6 py-4'>$fee</td>
-            <td class='px-6 py-4'>
-              <button class='text-blue-600 hover:underline'> <a href='edit.php?editId=$id'>Edit</a> </button>
-              <button class='text-red-600 hover:underline ml-4'><a href='displayRoom.php?deleteId=$id'>Delete</a></button>
-            </td>
-          </tr>";
-            }
-          }
-          ?>
-         
-        </tbody>
-      </table>
-          
+          <!-- New Password -->
+          <div class="mb-4">
+            <label for="new_password" class="block text-gray-700 mb-2">
+              New Password
+            </label>
+            <input
+              type="password"
+              id="new_password"
+              name="new_password"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Enter your new password"
+              required />
+          </div>
 
+          <!-- Confirm New Password -->
+          <div class="mb-6">
+            <label for="confirm_password" class="block text-gray-700 mb-2">
+              Confirm New Password
+            </label>
+            <input
+              type="password"
+              id="confirm_password"
+              name="confirm_password"
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+              placeholder="Confirm your new password"
+              required />
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300">
+            Update Password
+          </button>
+        </form>
+
+        <!-- Footer Links -->
+        <div class="mt-6 text-center text-sm text-gray-500">
+          <a href="login.php" class="text-blue-500 hover:underline">
+            Back to Login
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>
+
+
+
   <!-- script -->
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <script src="js/scripts.js"></script>

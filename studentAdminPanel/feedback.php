@@ -41,48 +41,6 @@ if (!isset($_SESSION['mySession'])) {
 
     <!-- add room from  -->
 
-    <div class=" p-8 bg-gray-100 rounded-md shadow-md ml-52 w-full ">
-      <h2 class="text-2xl font-semibold text-gray-700 mb-6">Edit Hostel Room Details</h2>
-
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
-            <th scope="col" class="px-6 py-3">SL</th>
-            <th scope="col" class="px-6 py-3">Room No</th>
-            <th scope="col" class="px-6 py-3">Set's</th>
-            <th scope="col" class="px-6 py-3">Fee Per Month</th>
-            <th scope="col" class="px-6 py-3">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          if (!$conn) {
-            die('Connection Failed' . mysqli_connect_errno());
-          } else {
-
-            $display = $conn->query("SELECT * FROM add_room");
-            $count = 1;
-            while (list($id, $room_no, $sets, $fee) = $display->fetch_row()) {
-              $sl = $count++;
-              echo " <tr class='bg-white border-b dark:bg-gray-800 dark:border-gray-700'>
-            <td class='px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap'>$sl</td>
-            <td class='px-6 py-4'>$room_no</td>
-            <td class='px-6 py-4'>$sets</td>
-            <td class='px-6 py-4'>$fee</td>
-            <td class='px-6 py-4'>
-              <button class='text-blue-600 hover:underline'> <a href='edit.php?editId=$id'>Edit</a> </button>
-              <button class='text-red-600 hover:underline ml-4'><a href='displayRoom.php?deleteId=$id'>Delete</a></button>
-            </td>
-          </tr>";
-            }
-          }
-          ?>
-         
-        </tbody>
-      </table>
-          
-
-    </div>
 
   </div>
   <!-- script -->

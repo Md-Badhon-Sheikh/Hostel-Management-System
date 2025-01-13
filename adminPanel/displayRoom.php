@@ -77,8 +77,8 @@ if(isset($_GET['deleteId'])){
             <td class='px-6 py-4'>$sets</td>
             <td class='px-6 py-4'>$fee</td>
             <td class='px-6 py-4'>
-              <button class='text-blue-600 hover:underline'> <a href='edit.php?editId=$id'>Edit</a> </button>
-              <button class='text-red-600 hover:underline ml-4'><a href='displayRoom.php?deleteId=$id'>Delete</a></button>
+              <button class=' '> <a href='edit.php?editId=$id'> <i class='fa-solid fa-pen-to-square'> </i> Edit</a> </button>
+              <button class=''><a href='displayRoom.php?deleteId=$id'>  <i class='fa-solid fa-trash'></i> Delete</a></button>
             </td>
           </tr>";
             }
