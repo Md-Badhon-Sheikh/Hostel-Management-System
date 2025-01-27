@@ -1,13 +1,34 @@
 <?php
-include_once('../db_root.php');
+include_once('../db_root.php'); // Ensure the file path is correct
 session_start();
 
 if (!isset($_SESSION['mySession'])) {
   header('location:../index.php');
+  exit; // Always exit after header redirection
 }
 
+if (isset($_GET['room_id'])) {
+  $room_id = $_GET['room_id'];
 
+  // Ensure PDO connection works
+  if ($pdo) {
+    $query = "SELECT fee, t_sets AS set FROM add_room WHERE id = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$room_id]);
+    $room = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Return JSON response
+    if ($room) {
+      echo json_encode($room);
+    } else {
+      echo json_encode(['fee' => '', 'set' => '']); // Empty data if no match found
+    }
+  } else {
+    echo json_encode(['error' => 'Database connection failed']);
+  }
+}
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -49,28 +70,35 @@ if (!isset($_SESSION['mySession'])) {
             <!-- Room Number -->
             <div class="flex mb-4 w-full">
               <label for="roomNumber" class="w-1/4 text-gray-700 text-right font-semibold">Room No :</label>
-              <select name="room" id="" class="w-3/4 py-2 px-4 border border-gray-300 rounded ml-3">
-                <option value="" aria-placeholder="Select Room Number">Select Room Number</option>
+              <select name="room" id="room" class="w-3/4 py-2 px-4 border border-gray-300 rounded ml-3">
+                <option>Select Room</option>
+                <?php
+                $roomList = $conn->query('SELECT id, room_no FROM add_room');
+                while ($row = $roomList->fetch_assoc()) {
+                  echo "<option value='{$row['id']}'>{$row['room_no']}</option>";
+                }
+                ?>
+
               </select>
             </div>
-
 
             <!-- Seater -->
             <div class="flex mb-4 w-full">
               <label for="seater" class="w-1/4 text-gray-700  text-right font-semibold">Seater :</label>
-              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="seater" id="seater" placeholder="Enter Seater">
+              <input value='' class='w-3/4 px-4 py-2 border border-gray-300 rounded ml-3' type='text' name='set' id='set' placeholder='Enter Seater' readonly>
             </div>
+
 
             <!-- Fees Per Month -->
             <div class="flex mb-4 w-full">
               <label for="fees" class="w-1/4 text-gray-700  text-right font-semibold">Fees Per Month :</label>
-              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="fees" id="fees" placeholder="Enter Fee">
+              <input class="w-3/4 px-4 py-2 border border-gray-300 rounded ml-3" type="text" name="fee" id="fee" placeholder="Enter Fee" readonly>
             </div>
 
             <!-- Food Status -->
             <div class="flex mb-4 w-full">
               <label for="stayFrom" class="w-1/4 text-gray-700 text-right font-semibold">Food Status :</label>
-              <input type="radio" name="food" id="" class="p-3  ml-3 mr-3">
+              <input type="radio" name="food" id="" class="p-3  ml-3 mr-3" value="Without Food">
               <label for="food" class="text-gray-600 mr-3">Without Food</label>
               <input type="radio" name="food" id="" class="p-3  ml-3 mr-3">
               <label for="food" class="text-gray-600 mr-3">With Food (TK 2000.00 Per Month Extra)</label>
@@ -207,6 +235,30 @@ if (!isset($_SESSION['mySession'])) {
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   <script src="js/scripts.js"></script>
   <!-- end script -->
+
+  <script>
+    document.getElementById('room').addEventListener('change', function() {
+      const roomId = this.value;
+      if (roomId) {
+        fetch(`../fetch_room.php?room_id=${roomId}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log('Fetched Data:', data); // Debugging: Log fetched data
+            document.getElementById('fee').value = data.fee || '';
+            document.getElementById('set').value = data.set || '';
+          })
+          .catch(error => console.error('Error fetching room details:', error));
+      } else {
+        document.getElementById('fee').value = '';
+        document.getElementById('set').value = '';
+      }
+    });
+  </script>
 
 </body>
 

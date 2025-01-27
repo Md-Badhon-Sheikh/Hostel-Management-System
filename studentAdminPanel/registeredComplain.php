@@ -21,7 +21,7 @@ if (!isset($_SESSION['mySession'])) {
   <title>Welcome To Hostel Management System</title>
 </head>
 
-<body class="bg-gray-100">
+<body class="">
 
 
   <!-- start navbar -->
@@ -32,14 +32,73 @@ if (!isset($_SESSION['mySession'])) {
 
 
   <!-- strat wrapper -->
-  <div class="h-screen flex flex-row flex-wrap">
+  <div class="flex w-full">
 
     <!-- start sidebar -->
     <?php
     include('shared/sidebar.php')
     ?>
     <!-- end side bar -->
-    
+
+
+
+    <div class="container mx-auto mt-10 ">
+      <h1 class="text-4xl mb-5 font-bold text-center">My Complaints</h1>
+      <div class="p-4 bg-white rounded shadow-md">
+        <h1 class="text-2xl font-semibold text-gray-800 mb-4">Complaint List</h1>
+
+        <!-- Responsive Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full border-collapse border border-gray-200 text-left text-sm">
+            <!-- Table Head -->
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="border border-gray-200 px-4 py-2 text-gray-700">SL</th>
+                <th class="border border-gray-200 px-4 py-2 text-gray-700">Complaint Number</th>
+                <th class="border border-gray-200 px-4 py-2 text-gray-700">Complaint Type</th>
+                <th class="border border-gray-200 px-4 py-2 text-gray-700">Complaint Status</th>
+                <th class="border border-gray-200 px-4 py-2 text-gray-700">Reg Date</th>
+                <th class="border border-gray-200 px-4 py-2 text-gray-700">Action</th>
+              </tr>
+            </thead>
+            <!-- Table Body -->
+            <tbody>
+            <?php
+          if (!$conn) {
+            die('Connection Failed' . mysqli_connect_errno());
+          } else {
+
+            $display = $conn->query("SELECT * FROM complain");
+            $count = 1;
+            $counter = 1250005;
+            while (list($id, $c_type, $c_explain, $c_date, $c_stutas) = $display->fetch_row()) {
+              $sl = $count++;
+              $c_no = $counter++;
+              $action = 'Pending';
+
+
+              
+              echo "<tr>
+                <td class='border border-gray-200 px-4 py-2'>$sl</td>
+                <td class='border border-gray-200 px-4 py-2'>$c_no</td>
+                <td class='border border-gray-200 px-4 py-2'>$c_type</td>
+                <td class='border border-gray-200 px-4 py-2'>
+                  <span class='text-green-600 font-medium'>$c_stutas</span>
+                </td>
+                <td class='border border-gray-200 px-4 py-2'>$c_date</td>
+                <td class='border border-gray-200 px-4 py-2'>$action
+                </td>
+              </tr>
+
+              <!-- Add more rows as needed -->
+            </tbody>";
+          }
+        }
+        ?>
+          </table>
+        </div>
+      </div>
+    </div>
 
   </div>
   <!-- end wrapper -->

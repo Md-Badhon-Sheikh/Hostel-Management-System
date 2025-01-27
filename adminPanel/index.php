@@ -159,9 +159,22 @@ if (!isset($_SESSION['mySession'])) {
                 </div>
                 <!-- end top -->
 
+                 <!-- display total complain  -->
+                <?php
+                  $display = $conn->query("SELECT * FROM complain");
+                  $counter = 1;
+                  while (list($id) = $display->fetch_row()) {
+                    $complain = $counter++;
+                  }
+
+                  ?>
                 <!-- bottom -->
                 <div class="mt-8">
-                  <h1 class="h5 num-4">38</h1>
+                  <h1 class="h5 num-4">
+                  <?php
+                       echo "$complain";
+                    ?>
+                  </h1>
                   <p>Registered Complaints</p>
                 </div>
                 <!-- end bottom -->
