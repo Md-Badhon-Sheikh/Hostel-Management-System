@@ -163,8 +163,10 @@ if (!isset($_SESSION['mySession'])) {
                 <?php
                   $display = $conn->query("SELECT * FROM complain");
                   $counter = 1;
-                  while (list($id) = $display->fetch_row()) {
-                    $complain = $counter++;
+                  while (list($id, $c_type, $c_explain, $c_date, $status) = $display->fetch_row()) {
+                    if($status == 'Pending'){
+                      $complain = $counter++;
+                    }
                   }
 
                   ?>
@@ -201,9 +203,24 @@ if (!isset($_SESSION['mySession'])) {
                 </div>
                 <!-- end top -->
 
+                <?php
+                  $display = $conn->query("SELECT * FROM complain");
+                  $p_counter = 1;
+                  while (list($id, $c_type, $c_explain, $c_date, $status) = $display->fetch_row()) {
+                    if($status == 'In Process'){
+                      $p_complain = $p_counter++;
+                    }
+                  }
+
+                  ?>
+
                 <!-- bottom -->
                 <div class="mt-8">
-                  <h1 class="h5 num-4">38</h1>
+                  <h1 class="h5 num-4">
+                  <?php
+                       echo "$p_complain";
+                    ?>
+                  </h1>
                   <p>In Process Complaints</p>
                 </div>
                 <!-- end bottom -->
@@ -229,9 +246,23 @@ if (!isset($_SESSION['mySession'])) {
                 </div>
                 <!-- end top -->
 
+                <?php
+                  $display = $conn->query("SELECT * FROM complain");
+                  $c_counter = 1;
+                  while (list($id, $c_type, $c_explain, $c_date, $status) = $display->fetch_row()) {
+                    if($status == 'Complete'){
+                      $c_complain = $c_counter++;
+                    }
+                  }
+
+                  ?>
                 <!-- bottom -->
                 <div class="mt-8">
-                  <h1 class="h5 num-4">38</h1>
+                  <h1 class="h5 num-4">
+                  <?php
+                       echo "$c_complain";
+                    ?>
+                  </h1>
                   <p>Closed Complaints</p>
                 </div>
                 <!-- end bottom -->

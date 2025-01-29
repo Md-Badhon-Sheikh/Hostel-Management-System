@@ -7,6 +7,7 @@ if (!isset($_SESSION['mySession'])) {
 }
 
 
+
 ?>
 <!doctype html>
 <html lang="en">

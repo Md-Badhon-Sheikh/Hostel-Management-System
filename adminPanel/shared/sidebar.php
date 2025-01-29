@@ -79,9 +79,33 @@
 
       <!-- link -->
        
+      <a href="new_complaints.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      <i class="fa-solid fa-file"></i>
+      New Complaint
+      </a>
+      <!-- end link -->
+
+      <!-- link -->
+       
+      <a href="process_complaints.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      <i class="fa-solid fa-file"></i>
+      Process Complaint
+      </a>
+      <!-- end link -->
+
+      <!-- link -->
+       
+      <a href="close_complaints.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      <i class="fa-solid fa-file"></i>
+      Close Complaint
+      </a>
+      <!-- end link -->
+
+         <!-- link -->
+       
       <a href="complaints.php" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-shield-check text-xs mr-2"></i>
-       Complaints
+      <i class="fa-solid fa-file"></i>
+      All Complaints
       </a>
       <!-- end link -->
 
